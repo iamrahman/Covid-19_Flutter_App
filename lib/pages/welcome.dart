@@ -10,13 +10,6 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +23,13 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             Lottie.network('https://assets2.lottiefiles.com/private_files/lf30_4FGi6N.json'),
             Container(
-              child: Button('He'),
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+                child: Text('View More', style: TextStyle(color: Colors.white)),
+                color: Colors.blue[800],
+              )
             )
           ],
         ),

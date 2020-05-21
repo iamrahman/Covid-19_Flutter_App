@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:covid19/pages/welcome.dart';
+import 'package:covid19/pages/home.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomePage(title: 'Flutter Demo Home Page'),
+      routes: {
+        '/':  (context) => WelcomePage(title: ''),
+        '/home': (context) => HomePage(title: 'Covid 19 India',)
+      },
     );
   }
 }
